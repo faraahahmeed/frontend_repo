@@ -13,9 +13,9 @@ RUN npm run build --prod
 
 FROM nginxinc/nginx-unprivileged
 
-COPY --from=build /app/dist/trip-scheduling-frontend /opt/bitnami/nginx/html
+COPY --from=build /app/dist/frontend_repo /opt/bitnami/nginx/html
 
-COPY src/nginx/etc/conf.d/default.conf /etc/nginx/conf/default.conf
+COPY src/nginx.conf /etc/nginx/conf/default.conf
 
 CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
 # COPY package.json /app/
