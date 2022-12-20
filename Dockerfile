@@ -1,7 +1,7 @@
 FROM node:latest as build
 RUN mkdir -p /app
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
 COPY package.json package-lock.json ./
 RUN npm install
@@ -13,7 +13,7 @@ RUN npm run build --prod
 
 FROM nginxinc/nginx-unprivileged
 
-COPY --from=build /app/dist/frontend_repo /opt/bitnami/nginx/html
+COPY --from=build /usr/src/app/dist/frontend_repo /usr/share/nginx/html
 
 COPY src/nginx.conf /etc/nginx/conf/default.conf
 
