@@ -1,0 +1,23 @@
+h2{
+  text-align: center;
+}
+
+body{
+  text-align: center;
+}
+
+.button {
+  border: 0px;
+  color: black;
+  padding: 8px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 260px;
+  background-color: rgb(172, 183, 194);
+}
+
+ 

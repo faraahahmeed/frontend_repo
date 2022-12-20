@@ -1,0 +1,21 @@
+<ul class="nav nav-tabs nav-stacked">
+  <a (click)="goToTripsList()"  class="nav-link">Trip List</a>
+  <a (click)="goToCreateList()" class="nav-link">Add Trip</a>
+  <a (click)="goToStationList()" class="nav-link">Station List</a>
+
+</ul>
+<h2>Stations List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Station ID</th>
+            <th>Station Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor ="let station of stations">
+            <td>{{station.id}}</td>
+            <td>{{station.name}}</td>
+        </tr>
+    </tbody>
+</table>
