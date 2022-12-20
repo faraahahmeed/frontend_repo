@@ -1,4 +1,4 @@
-FROM node:latest as build
+FROM node:16-alpine as build
 RUN mkdir -p /app
 
 WORKDIR /usr/src/app
@@ -13,11 +13,11 @@ RUN npm run build --prod
 
 FROM nginxinc/nginx-unprivileged
 
-COPY --from=build /usr/src/app/dist/frontend_repo /usr/share/nginx/html
+COPY --from=build ./usr/src/app/dist/frontend_repo /usr/share/nginx/html
 
-COPY src/nginx.conf /etc/nginx/conf/default.conf
+COPY ./nginx.conf /etc/nginx/conf/default.conf
 
-CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
+# CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
 # COPY package.json /app/
 # RUN npm install
 
