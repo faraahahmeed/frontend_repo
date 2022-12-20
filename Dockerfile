@@ -7,7 +7,7 @@ RUN npm install
 RUN npm run build --prod
 
 FROM nginxinc/nginx-unprivileged
-COPY --from=builder /dist /opt/bitnami/nginx/html
+COPY --from=builder /usr/src/app/dist/trip-scheduling-frontend /usr/share/nginx/html
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
 
