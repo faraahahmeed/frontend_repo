@@ -9,7 +9,7 @@ import { Station } from './station';
 export class StationService {
   [x: string]: any;
 
-  private baseURL = "http://172.30.105.154/stations";
+  private baseURL = "https://backend-repo2-faraahahmeed-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/stations";
 
   constructor(private httpClient: HttpClient) {}
 

@@ -8,8 +8,8 @@ import { Admin } from './admin';
 })
 export class AdminService {
   [x: string]: any;
-  private signupUrl= "http://172.30.105.154/signup"; 
-  private signinUrl= "http://172.30.105.154/admin/signin"; 
+  private signupUrl= "http://backend-repo2-faraahahmeed-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/signup"; 
+  private signinUrl= "https://backend-repo2-faraahahmeed-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/admin/signin"; 
   constructor(private httpclient: HttpClient) { }
   adminsignup(admin: Admin):Observable<Admin>{
     return this.httpclient.post<Admin>(this.signupUrl, admin);

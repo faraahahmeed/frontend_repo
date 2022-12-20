@@ -8,7 +8,7 @@ import { Trip } from './trip';
 })
 export class TripService {
 
-  private baseURL = "http://172.30.105.154/trips"
+  private baseURL = "https://backend-repo2-faraahahmeed-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/trips"
   constructor(private httpClient: HttpClient) { }
 
   getTripsList():Observable<Trip[]>{
